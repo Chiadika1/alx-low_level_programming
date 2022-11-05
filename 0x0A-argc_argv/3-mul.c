@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
- * main - adds numbers
+ * main - multiplies two numbers
  * @argc: number of arguments passed to the function
  * @argv: argument vector of pointers to strings
  *
@@ -11,23 +10,16 @@
  */
 int main(int argc, char *argv[])
 {
-	int a = 0, i, j;
+	int a, b, c;
 
-	for (i = 1; i < argc; i++)
+	if (argc != 3)
 	{
-		for (j = 0; argv[i][j]; j++)
-		{
-			if (isdigit(argv[i][j]) == 0)
-			{
-				puts("Error");
-				return (1);
-			}
-		}
+		puts("Error");
+		return (1);
 	}
-	for (i = 1; i < argc; i++)
-	{
-		a += atoi(argv[i]);
-	}
-	printf("%d\n", a);
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
+	c = a * b;
+	printf("%d\n", c);
 	return (0);
 }
